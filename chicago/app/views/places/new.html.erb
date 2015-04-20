@@ -1,0 +1,39 @@
+<h2>New Place</h2>
+
+<form class="form-horizontal" action="/places/create">
+
+    <div class="form-group">
+        <label for="title" class="col-sm-4 control-label">Title</label>
+        <div class="col-sm-5">
+            <%= text_field_tag 'title', nil, class: "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="photo_url" class="col-sm-4 control-label">Photo URL</label>
+        <div class="col-sm-5">
+            <%= text_field_tag 'photo_url', nil, class: "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="admission_price" class="col-sm-4 control-label">Admission Price</label>
+        <div class="col-sm-5">
+            <%= text_field_tag 'admission_price', nil, class: "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="description" class="col-sm-4 control-label">Description</label>
+        <div class="col-sm-5">
+            <%= text_area_tag 'description', nil, rows: 3, class: "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-5">
+            <button type=submit" class="btn btn-default">Create</button>
+        </div>
+    </div>
+
+</form>
