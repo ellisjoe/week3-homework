@@ -1,6 +1,29 @@
 <h4><%= link_to "Edit Place", "#{@place.id}/edit", {:class => 'btn btn-primary btn-xs'} %></h4>
 
 <h2><%= @place.title %></h2>
-<h4><%= @place.photo_url %></h4>
-<h4><%= number_to_currency @place.admission_price.to_f / 100 %></h4>
-<%= @place.description %>
+<h4>Admission: <%= number_to_currency @place.admission_price.to_f / 100 %></h4>
+<%= image_tag @place.photo_url, {:width => 400, :height => 200} %>
+
+<hr>
+
+<p><%= @place.description %></p>
+
+<hr>
+
+<h4>Write a Review</h4>
+<form action="/places/<%= @place.id %>/review">
+    <select name="rating">
+        <option>5 stars</option>
+        <option>4 stars</option>
+        <option>3 stars</option>
+        <option>2 stars</option>
+        <option>1 star</option>
+    </select>
+    <input type="text" name="review">
+    <input type="submit" value="Submit">
+</form>
+
+<h4>Reviews</h4>
+<% @reviews.each do |review| %>
+    <%= review.rating %> | <%= review.review %><br>
+<% end %>

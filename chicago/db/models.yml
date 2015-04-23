@@ -3,3 +3,8 @@ Place
     photo_url: text
     admission_price: integer
     description: text
+
+Review
+    rating: text
+    review: text
+    place_id: integer

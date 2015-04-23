@@ -20,4 +20,12 @@ ActiveRecord::Schema.define(version: 0) do
     t.text    "description"
   end
 
+  create_table "reviews", force: true do |t|
+    t.text    "rating"
+    t.text    "review"
+    t.integer "place_id"
+  end
+
+  add_index "reviews", ["place_id"], name: "index_reviews_on_place_id"
+
 end

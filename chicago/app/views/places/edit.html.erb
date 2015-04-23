@@ -19,7 +19,7 @@
     <div class="form-group">
         <label for="admission_price" class="col-sm-4 control-label">Admission Price</label>
         <div class="col-sm-5">
-            <%= text_field_tag 'admission_price', @place.admission_price, class: "form-control" %>
+            <%= text_field_tag 'admission_price', @place.admission_price.to_f / 100, class: "form-control" %>
         </div>
     </div>
 
